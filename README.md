@@ -12,7 +12,7 @@ Here's a detailed README template for your real-time weather monitoring applicat
 - [Functionality](#functionality)
 - [Test Cases](#test-cases)
 - [Contributing](#contributing)
-- [License](#license)
+- [SAMPLE INPUT-OUPUT](#SAMPLE INPUT-OUPUT)
 
 ## Overview
 The Weather Monitoring System is a real-time data processing application designed to monitor weather conditions for major metros in India. It retrieves weather data from the OpenWeatherMap API, processes the data to provide insights such as daily aggregates, and triggers alerts based on user-defined thresholds. This system is capable of continuous data retrieval and offers a summary of weather conditions, including average, maximum, and minimum temperatures.
@@ -108,3 +108,92 @@ Contributions are welcome! If you would like to contribute to this project, plea
 2. Create a new branch for your feature or fix.
 3. Commit your changes and push to your branch.
 4. Submit a pull request.
+
+
+
+
+## SAMPLE INPUT-OUTPUT
+
+### Sample Inputs
+
+1. **Weather Data from OpenWeatherMap API**:
+   - For **Delhi**:
+     ```json
+     {
+       "main": {
+         "temp": 295.15,
+         "feels_like": 295.15,
+         "temp_min": 293.15,
+         "temp_max": 297.15
+       },
+       "weather": [
+         {
+           "main": "Clear"
+         }
+       ],
+       "dt": 1697533200
+     }
+     ```
+   - For **Mumbai**:
+     ```json
+     {
+       "main": {
+         "temp": 300.15,
+         "feels_like": 302.15,
+         "temp_min": 298.15,
+         "temp_max": 301.15
+       },
+       "weather": [
+         {
+           "main": "Rain"
+         }
+       ],
+       "dt": 1697533200
+     }
+     ```
+   
+2. **User-defined Alert Thresholds**:
+   - Temperature threshold: `35` degrees Celsius
+   - Weather condition: `Rain`
+
+### Sample Outputs
+
+1. **Console Output for Weather Data Retrieval**:
+   - After retrieving the weather data for Delhi:
+     ```
+     Weather Update for Delhi:
+     Temperature: 22°C
+     Feels Like: 22°C
+     Min Temperature: 20°C
+     Max Temperature: 24°C
+     Condition: Clear
+     Time: 2023-10-18 14:00:00
+     ```
+
+2. **Daily Weather Summary**:
+   - After processing multiple weather updates for Delhi and Mumbai over a day:
+     ```
+     Daily Weather Summary for 2023-10-18:
+     - Delhi:
+       Average Temperature: 22.5°C
+       Maximum Temperature: 24°C
+       Minimum Temperature: 20°C
+       Dominant Condition: Clear
+     - Mumbai:
+       Average Temperature: 27.5°C
+       Maximum Temperature: 30°C
+       Minimum Temperature: 25°C
+       Dominant Condition: Rain
+     ```
+
+3. **Alert Triggered**:
+   - If the temperature exceeds the defined threshold of 35°C:
+     ```
+     Alert: The temperature in Mumbai has exceeded the threshold of 35°C. Current temperature: 36°C
+     ```
+
+### Note
+- The temperature values are converted from Kelvin to Celsius by subtracting 273.15. For example, if the API returns a temperature of `300.15` K, it is converted to `300.15 - 273.15 = 27°C`.
+- The **Dominant Condition** is determined based on the frequency of weather conditions for the day. For example, if there are more `Clear` days than `Rain`, then `Clear` is chosen as the dominant condition.
+
+
