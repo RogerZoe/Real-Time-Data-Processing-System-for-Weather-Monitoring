@@ -1,7 +1,5 @@
 
 
----
-
 # Weather Monitoring System
 
 ## Table of Contents
@@ -12,7 +10,7 @@
 - [Functionality](#functionality)
 - [Test Cases](#test-cases)
 - [Contributing](#contributing)
-- [SAMPLE INPUT-OUPUT](#SAMPLEINPUT-OUTPUT)
+- [Sample-Input-Output](#sample-input-output)
 
 ## Overview
 The Weather Monitoring System is a real-time data processing application designed to monitor weather conditions for major metros in India. It retrieves weather data from the OpenWeatherMap API, processes the data to provide insights such as daily aggregates, and triggers alerts based on user-defined thresholds. This system is capable of continuous data retrieval and offers a summary of weather conditions, including average, maximum, and minimum temperatures.
@@ -112,7 +110,7 @@ Contributions are welcome! If you would like to contribute to this project, plea
 
 
 
-## SAMPLE INPUT-OUTPUT
+## SAMPLE-INPUT-OUTPUT
 
 ### Sample Inputs
 
