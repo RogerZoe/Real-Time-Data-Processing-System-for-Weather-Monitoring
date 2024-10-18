@@ -1,4 +1,4 @@
-Here's a detailed README template for your real-time weather monitoring application. You can customize it further based on your project specifics:
+
 
 ---
 
